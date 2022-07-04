@@ -9,6 +9,7 @@ SELECT *
 FROM SQLDA_DB.sqlda.[public].customers
 
 /*2:Write a query that pulls all emails for ZoomZoom customers in the state of florida in alphabetical order*/
+/*post-review - correct*/
 SELECT email
 FROM SQLDA_DB.sqlda.[public].customers
 where [state]= 'FL'
@@ -16,12 +17,14 @@ order by email
 
 /*3:Write a query that pulls all the first names, last names, and email details for ZoomZoom customers in New York City in the 
 state of NY. They should be ordered alphabetically by the last name followed by the first name.*/
-SELECT last_name,first_name, email
+/*post-review: I second guessed myself, the below code, which I had first, was correct*/
+SELECT first_name,last_name, email
 FROM SQLDA_DB.sqlda.[public].customers
 WHERE city= 'New York City' AND [state]= 'NY'
-ORDER BY last_name
+ORDER BY last_name, first_name
 
 /*4:Write a query that returns all customers with a phone number ordered by the date the customer was added to the database*/
+/*Post-review: correct*/
 SELECT *
 FROM SQLDA_DB.sqlda.[public].customers
 WHERE phone IS NOT NULL
