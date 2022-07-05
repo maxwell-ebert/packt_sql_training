@@ -13,6 +13,9 @@ lives in New York City in the state of New York.*/
 /*A note here - The book is in postgresql, and I'm using microsoft SQL server, since my job is a microsoft shop.
 my answer here is going to be pretty different, so I'm grading myself on the fundamental correctness of the output 
 table.*/
+
+/*Post-review: Correct*/
+
 SELECT * 
 INTO customers_nyc
 FROM SQLDA_DB.sqlda.[public].customers
@@ -25,6 +28,8 @@ FROM dbo.customers_nyc
 
 /*2: Delete from the new table all customers in postal code 10014. Due to state laws, they will not be eligible
 for marketing.*/
+
+/*Post-Review: Correct*/
 DELETE FROM dbo.customers_nyc
 WHERE postal_code= 10014
 
@@ -34,6 +39,8 @@ FROM dbo.customers_nyc
 WHERE postal_code= 10014
 
 /*3: Add a new text column called event*/
+
+/*Post-Review: Correct*/
 ALTER TABLE dbo.customers_nyc
 ADD [event] VARCHAR(20) NULL
 
@@ -41,6 +48,8 @@ SELECT *
 FROM dbo.customers_nyc
 
 /*4: Set the value of the even to 'thank-you party'*/
+
+/*Post-Review: Correct*/
 UPDATE dbo.customers_nyc
 SET [event]= 'thank-you party'
 
@@ -49,6 +58,8 @@ FROM dbo.customers_nyc
 
 /*5: You've told the manager that you've completed these steps. He tells the marketing ops team, who then uses the data 
 to launch a marketing campaign.The marketing manager thanks you and then asks you to delete the customers_nyc table*/
+
+/*Post-Review: Correct*/
 DROP TABLE dbo.customers_nyc
 
 /*This should throw an error*/
